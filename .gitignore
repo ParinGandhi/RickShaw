@@ -1,0 +1,24 @@
+
+
+#Ignore Maven wrappers
+/mvnw.bat
+/mvnw
+mvnw*
+/.mvn/
+
+
+# Ignore Eclipse configs
+**/.metadata
+**/Servers
+**/.settings
+**/.project
+**/.classpath
+**/.springBeans
+**/*.jar
+**/.checkstyle
+**/bin
+**/target
+**.classpath
+**.project
+**.prefs
+src/test/
