@@ -2,7 +2,6 @@ package com.rickshaw.service;
 
 import java.util.Hashtable;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rickshaw.domain.Customer;
@@ -10,8 +9,11 @@ import com.rickshaw.domain.Customer;
 @Service
 public class CustomerService {
 
-	@Autowired
-	private OrderService orderService;
+	/*
+	 * @Autowired private OrderService orderService;
+	 */
+
+	OrderService orderService = new OrderService();
 
 	Hashtable<String, Customer> customers = new Hashtable<String, Customer>();
 

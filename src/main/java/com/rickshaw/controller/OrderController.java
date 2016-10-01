@@ -7,23 +7,24 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rickshaw.domain.Customer;
-import com.rickshaw.service.CustomerService;
+import com.rickshaw.domain.Order;
+import com.rickshaw.service.OrderService;
 
 @RestController
-@RequestMapping("/customers")
-public class CustomerController {
+@RequestMapping("/orders")
+public class OrderController {
 
 	@Autowired
-	private CustomerService customerService;
+	private OrderService orderService;
 
 	@RequestMapping("/all")
-	public Hashtable<String, Customer> getAll() {
-		return customerService.getAll();
+	public Hashtable<String, Order> getAll() {
+		return orderService.getAll();
 	}
 
 	@RequestMapping("{id}")
-	public Customer getCustomer(@PathVariable("id") String id) {
-		return customerService.getCustomer(id);
+	public Order getOrder(@PathVariable("id") String id) {
+		return orderService.getOrder(id);
 	}
+
 }

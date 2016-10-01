@@ -20,6 +20,11 @@ public class OrderService {
 		order.setTotal(new BigDecimal(100.00));
 		orders.put("1", order);
 
+		order = new Order();
+		order.setId(2);
+		order.setDateCreated(new Date());
+		order.setTotal(new BigDecimal(89.00));
+		orders.put("2", order);
 	}
 
 	public Order getOrder(String id) {
@@ -28,6 +33,10 @@ public class OrderService {
 		} else {
 			return null;
 		}
+	}
+
+	public Hashtable<String, Order> getAll() {
+		return orders;
 	}
 
 }
