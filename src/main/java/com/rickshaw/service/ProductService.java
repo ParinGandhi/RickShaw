@@ -5,6 +5,7 @@ import java.util.Hashtable;
 
 import org.springframework.stereotype.Service;
 
+import com.rickshaw.domain.Order;
 import com.rickshaw.domain.Product;
 
 @Service
@@ -48,5 +49,17 @@ public class ProductService {
 		product.setPrice(new BigDecimal(79.99));
 		products.put("5", product);
 
+	}
+	
+	public Product getProduct(String id) {
+		if (products.containsKey(id)) {
+			return products.get(id);
+		} else {
+			return null;
+		}
+	}
+
+	public Hashtable<String, Product> getAll() {
+		return products;
 	}
 }
