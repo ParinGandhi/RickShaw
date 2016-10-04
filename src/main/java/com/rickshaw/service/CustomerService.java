@@ -23,22 +23,24 @@ public class CustomerService {
 		cust.setId(1);
 		cust.setFirstName("Tom");
 		cust.setLastName("Jones");
-		cust.setOrders(orderService.getOrder("1"));
 		customers.put("1", cust);
+		customers.get("1").getOrders().add(orderService.getOrder("1"));
+		customers.get("1").getOrders().add(orderService.getOrder("2"));
+		
 
 		cust = new Customer();
 		cust.setId(2);
 		cust.setFirstName("Dick");
 		cust.setLastName("Smith");
-		cust.setOrders(orderService.getOrder("2"));
 		customers.put("2", cust);
+		customers.get("2").getOrders().add(orderService.getOrder("2"));
 
 		cust = new Customer();
 		cust.setId(3);
 		cust.setFirstName("Harry");
 		cust.setLastName("Arnold");
-		cust.setOrders(orderService.getOrder("1"));
 		customers.put("3", cust);
+		customers.get("3").getOrders().add(orderService.getOrder("1"));
 	}
 
 	public Customer getCustomer(String id) {
